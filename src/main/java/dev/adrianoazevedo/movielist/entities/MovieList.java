@@ -1,22 +1,22 @@
 package dev.adrianoazevedo.movielist.entities;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
-public class MovieListEntity {
+@Entity
+@Table(name = "tb_movie_list")
+public class MovieList {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    public MovieListEntity() {
+    public MovieList() {
     }
 
-    public MovieListEntity(Long id, String name) {
+    public MovieList(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -40,7 +40,7 @@ public class MovieListEntity {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof MovieListEntity that)) return false;
+        if (!(o instanceof MovieList that)) return false;
         return Objects.equals(getId(), that.getId());
     }
 

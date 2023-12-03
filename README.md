@@ -1,13 +1,13 @@
-# MovieList Descrição do Projeto
+# MovieList - Descrição do Projeto
 >  *Este repositório tem como objetivo disponibilizar o projeto de referência MoviesList*
 
 ## Documentação e testes de API com Swagger: 
 http://localhost:8080/swagger-ui/index.html
 
 ## Domain Model
-imagem do  "Modelo conceitual"
 
-## Incluido
+![](E:\Sources\adrianoazevedo\movielist\projeto\diagrama.png "Diagrama")
+## Pré-configurado
 Os seguintes recursos estão pré-configurados:
 - Conteiners Docker Postgres e PGAdmin
 - Profile H2 [test]

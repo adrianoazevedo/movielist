@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "tb_movie")
-public class MovieEntity {
+public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,10 +15,10 @@ public class MovieEntity {
     private Integer rating;
     private String image;
 
-    public MovieEntity() {
+    public Movie() {
     }
 
-    public MovieEntity(Long id, String title, Double score, Integer rating, String image) {
+    public Movie(Long id, String title, Double score, Integer rating, String image) {
         this.id = id;
         this.title = title;
         this.score = score;
@@ -69,7 +69,7 @@ public class MovieEntity {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof MovieEntity that)) return false;
+        if (!(o instanceof Movie that)) return false;
         return Objects.equals(getId(), that.getId());
     }
 

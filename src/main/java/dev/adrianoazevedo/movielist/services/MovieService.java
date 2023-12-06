@@ -33,8 +33,8 @@ public class MovieService {
     }
 
     @Transactional(readOnly = true)
-    public List<MovieMinDTO> findByGameList(Long listId) {
-        List<MovieMinProjection> games = movieRepository.searchByList(listId);
-        return games.stream().map(MovieMinDTO::new).toList();
+    public List<MovieMinDTO> findByMovieList(Long listId) {
+        List<MovieMinProjection> movies = movieRepository.searchByList(listId);
+        return movies.stream().map(MovieMinDTO::new).toList();
     }
 }

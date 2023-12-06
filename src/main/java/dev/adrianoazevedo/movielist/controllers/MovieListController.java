@@ -39,9 +39,9 @@ public class MovieListController {
         return result;
     }
 
-    @GetMapping(value = "/{listId}/games")
-    public List<MovieMinDTO> findGames(@PathVariable Long listId) {
-        List<MovieMinDTO> result = movieService.findByGameList(listId);
+    @GetMapping(value = "/{listId}/movies")
+    public List<MovieMinDTO> findMovies(@PathVariable Long listId) {
+        List<MovieMinDTO> result = movieService.findByMovieList(listId);
         return result;
     }
 

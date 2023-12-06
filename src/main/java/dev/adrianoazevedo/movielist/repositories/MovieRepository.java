@@ -14,7 +14,7 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
 			SELECT tb_movie.id, tb_movie.title, tb_movie.score AS score, tb_movie.rating AS rating,
 			tb_movie.image AS image, tb_belong.position
 			FROM tb_movie
-			INNER JOIN tb_belong ON tb_movie.id = tb_belong.game_id
+			INNER JOIN tb_belong ON tb_movie.id = tb_belong.movie_id
 			WHERE tb_belong.list_id = :listId
 			ORDER BY tb_belong.position
 				""")

@@ -9,12 +9,14 @@ public class MovieMinDTO {
     private String title;
     private Double score;
     private String image;
+    private Integer rating;
 
     public MovieMinDTO(Movie entity){
         id = entity.getId();
         title = entity.getTitle();
         score = entity.getScore();
         image = entity.getImage();
+        rating = entity.getRating();
     }
 
     public MovieMinDTO(MovieMinProjection projection){
@@ -22,6 +24,7 @@ public class MovieMinDTO {
         title = projection.getTitle();
         score = projection.getScore();
         image = projection.getImage();
+        rating = projection.getRating();
     }
 
     public Long getId() {
@@ -38,5 +41,9 @@ public class MovieMinDTO {
 
     public String getImage() {
         return image;
+    }
+
+    public Integer getRating() {
+        return rating;
     }
 }

@@ -34,14 +34,19 @@ public class BelongPK {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof BelongPK belongPK)) return false;
-        return Objects.equals(getMovie(), belongPK.getMovie()) && Objects.equals(getList(), belongPK.getList());
+    public int hashCode() {
+        return Objects.hash(movie, list);
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(movie, list);
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        BelongPK other = (BelongPK) obj;
+        return Objects.equals(movie, other.movie) && Objects.equals(list, other.list);
     }
 }

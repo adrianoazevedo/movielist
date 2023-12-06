@@ -23,6 +23,15 @@ public class Belong {
         return id.getMovie();
     }
 
+    public void setList(MovieList list) {
+        id.setList(list);
+    }
+
+    public MovieList getList() {
+        return id.getList();
+    }
+
+
     public Integer getPosition() {
         return position;
     }
@@ -32,15 +41,20 @@ public class Belong {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Belong belong)) return false;
-        return Objects.equals(id, belong.id);
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(id);
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Belong other = (Belong) obj;
+        return Objects.equals(id, other.id);
     }
 }
 

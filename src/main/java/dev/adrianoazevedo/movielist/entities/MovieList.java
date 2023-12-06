@@ -38,14 +38,19 @@ public class MovieList {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof MovieList that)) return false;
-        return Objects.equals(getId(), that.getId());
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(getId());
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        MovieList other = (MovieList) obj;
+        return Objects.equals(id, other.id);
     }
 }

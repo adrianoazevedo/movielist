@@ -6,7 +6,7 @@ http://localhost:8080/swagger-ui/index.html
 
 ## Domain Model
 
-![](E:\Sources\adrianoazevedo\movielist\projeto\diagrama.png "Diagrama")
+![Model](https://github.com/adrianoazevedo/movielist/blob/main/projeto/diagrama.png "Diagrama")
 ## Pré-configurado
 Os seguintes recursos estão pré-configurados:
 - Conteiners Docker Postgres e PGAdmin
@@ -31,6 +31,8 @@ Os seguintes recursos estão pré-configurados:
 
 ### Spring Boot versions
 - 3.2.0
+
+
 
 
 

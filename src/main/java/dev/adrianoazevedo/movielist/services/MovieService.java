@@ -39,12 +39,6 @@ public class MovieService {
         return new MovieDTO(result);
     }
 
-    @Transactional(readOnly = true)
-    public List<MovieMinDTO> findByMovieList(Long listId) {
-        List<MovieMinProjection> movies = movieRepository.searchByList(listId);
-        return movies.stream().map(MovieMinDTO::new).toList();
-    }
-
     @Transactional
     public MovieDTO insert(MovieDTO dto) {
         Movie entity = new Movie();
@@ -81,5 +75,11 @@ public class MovieService {
         entity.setScore(dto.getScore());
         entity.setRating(dto.getRating());
         entity.setImage(dto.getImage());
+    }
+
+    @Transactional(readOnly = true)
+    public List<MovieMinDTO> findByMovieList(Long listId) {
+        List<MovieMinProjection> movies = movieRepository.searchByList(listId);
+        return movies.stream().map(MovieMinDTO::new).toList();
     }
 }

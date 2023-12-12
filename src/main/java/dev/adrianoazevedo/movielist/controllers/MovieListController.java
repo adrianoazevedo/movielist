@@ -39,26 +39,26 @@ public class MovieListController {
         return result;
     }
 
-    @GetMapping(value = "/list/{id}")
+    @GetMapping(value = "/lists/{id}")
     public MovieListDTO findById(@PathVariable Long id) {
         MovieListDTO result = movieListService.findById(id);
         return result;
     }
 
-    @PostMapping(value = "/list")
+    @PostMapping(value = "/lists")
     public ResponseEntity<MovieListDTO> insert(@RequestBody MovieListDTO dto) {
         dto = movieListService.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{Id}").buildAndExpand(dto.getId()).toUri();
         return ResponseEntity.created(uri).body(dto);
     }
 
-    @PutMapping(value = "/list/{id}")
+    @PutMapping(value = "/lists/{id}")
     public ResponseEntity<MovieListDTO> update(@PathVariable Long id, @RequestBody MovieListDTO dto) {
         dto = movieListService.update(id, dto);
         return ResponseEntity.ok().body(dto);
     }
 
-    @DeleteMapping(value = "/list/{id}")
+    @DeleteMapping(value = "/lists/{id}")
     public ResponseEntity<MovieListDTO> delete(@PathVariable Long id) {
         movieListService.delete(id);
         return ResponseEntity.noContent().build();
@@ -66,13 +66,13 @@ public class MovieListController {
 
 
 
-    @GetMapping(value = "/list/{listId}/movies")
+    @GetMapping(value = "/lists/{listId}/movies")
     public List<MovieMinDTO> findMovies(@PathVariable Long listId) {
         List<MovieMinDTO> result = movieService.findByMovieList(listId);
         return result;
     }
 
-    @PostMapping(value = "/list/{listId}/replacement")
+    @PostMapping(value = "/lists/{listId}/replacement")
     public void move(@PathVariable Long listId, @RequestBody ReplacementDTO body) {
         movieListService.move(listId, body.getSourceIndex(), body.getDestinationIndex());
     }

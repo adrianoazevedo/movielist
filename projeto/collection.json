@@ -43,6 +43,39 @@
 					"response": []
 				},
 				{
+					"name": "Movie for ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Movie Insert",
 					"event": [
 						{
@@ -70,14 +103,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/movie",
+							"raw": "http://localhost:8080/movies",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"movie"
+								"movies"
 							]
 						}
 					},
@@ -112,14 +145,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/movie/30",
+							"raw": "http://localhost:8080/movies/30",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"movie",
+								"movies",
 								"30"
 							]
 						}
@@ -154,14 +187,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/movie/30",
+							"raw": "http://localhost:8080/movies/30",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"movie",
+								"movies",
 								"30"
 							]
 						}
@@ -229,14 +262,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/list",
+							"raw": "http://localhost:8080/lists",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"list"
+								"lists"
 							]
 						}
 					},
@@ -271,14 +304,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/list/5",
+							"raw": "http://localhost:8080/lists/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"list",
+								"lists",
 								"5"
 							]
 						}
@@ -313,14 +346,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/list/5",
+							"raw": "http://localhost:8080/lists/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"list",
+								"lists",
 								"5"
 							]
 						}
@@ -356,14 +389,14 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/list/1/movies",
+							"raw": "http://localhost:8080/lists/1/movies",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"list",
+								"lists",
 								"1",
 								"movies"
 							]

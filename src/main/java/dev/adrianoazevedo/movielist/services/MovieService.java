@@ -33,9 +33,16 @@ public class MovieService {
         return result.stream().map(MovieMinDTO::new).toList();
     }
 
-    @Transactional(readOnly = true)
+    /*@Transactional(readOnly = true)
     public MovieDTO findById(@PathVariable Long listId) {
         Movie result = movieRepository.findById(listId).get();
+        return new MovieDTO(result);
+    }*/
+
+    @Transactional(readOnly = true)
+    public MovieDTO findById(Long id) {
+        Movie result = movieRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Recurso não encontrado"));
         return new MovieDTO(result);
     }
 

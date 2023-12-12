@@ -4,9 +4,12 @@
 ## Documentação e testes de API com Swagger (to do): 
 http://localhost:8080/swagger-ui/index.html
 
-## Domain Model
+## Collection Postman
+![Collection](https://github.com/adrianoazevedo/movielist/blob/main/projeto/collection.json "Json collection")
 
+## Domain Model
 ![Model](https://github.com/adrianoazevedo/movielist/blob/main/projeto/diagrama.png "Diagrama")
+
 ## Pré-configurado
 Os seguintes recursos estão pré-configurados:
 - Conteiners Docker Postgres e PGAdmin

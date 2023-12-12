@@ -34,26 +34,31 @@ public class MovieController {
         return result;
     }
 
-    @GetMapping(value = "/movie/{id}")
+    /*@GetMapping(value = "/movie/{id}")
     public MovieDTO findById(@PathVariable Long id) {
         MovieDTO result = movieService.findById(id);
         return result;
+    }*/
+
+    @GetMapping(value = "/movies/{id}")
+    public MovieDTO findById(@PathVariable Long id) {
+        return movieService.findById(id);
     }
 
-    @PostMapping(value = "/movie")
+    @PostMapping(value = "/movies")
     public ResponseEntity<MovieDTO> insert(@RequestBody MovieDTO dto) {
         dto = movieService.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
         return ResponseEntity.created(uri).body(dto);
     }
 
-    @PutMapping(value = "/movie/{id}")
+    @PutMapping(value = "/movies/{id}")
     public ResponseEntity<MovieDTO> update(@PathVariable Long id, @RequestBody MovieDTO dto) {
         dto = movieService.update(id, dto);
         return ResponseEntity.ok().body(dto);
     }
 
-    @DeleteMapping(value = "/movie/{id}")
+    @DeleteMapping(value = "/movies/{id}")
     public ResponseEntity<MovieDTO> delete(@PathVariable Long id) {
         movieService.delete(id);
         return ResponseEntity.noContent().build();
